@@ -1,0 +1,118 @@
+ /* Style for containerLP */
+ .containerLP {
+    height: 100%; 
+    padding: 2%;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* border: solid; */
+    box-sizing: border-box;
+    background-image: linear-gradient(rgb(179, 243, 245) 10% , rgba(255, 255, 255, 0) ), url("../images/bg1.jpg");
+  }
+  
+
+  /* for sign in text */
+  .containerLP h2 {
+    margin-top: 1%;
+    text-align: center;
+    color: #255582;
+    font-size: 170%;
+    margin-left: -2%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    margin-top: 1%;
+  }
+  
+  /* for button*/
+
+  .button-containerLP{
+    display: grid;
+    place-items: center;
+    /* border: solid; */
+    padding-bottom: 0%;
+    margin-left: -2%;
+}
+
+.button-customerLP{
+  color: #b9f4f4;
+  height: 20%;
+  width: 20%;
+  border-radius: 2%;
+  background-color: #255582;
+  padding: 2% 2% 3% 2%;
+  text-align: center;
+  border: none;
+  font-size: 130%;
+}
+
+.button-shopkeeperLP{
+  text-decoration: none;
+  color: #b9f4f4;
+  height: 20%;
+  width: 20%;
+  border-radius: 2%;
+  background-color: #255582;
+  padding: 2% 2% 3% 2%;
+  text-align: center;
+  border: none;
+  font-size: 130%;
+}
+
+.button-customerLP:hover{
+  background-color: #001c3638;
+  color: #001c36;
+  cursor: pointer;
+}
+
+.button-shopkeeperLP:hover{
+  background-color: #001c3638;
+  color: #001c36;
+  cursor: pointer;
+}
+
+/*for the hr tag*/
+.hr_tagLP{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+hr {
+  display: inline-block;
+  width: 10%;
+  height: 1px;
+  background-color: #00000021;
+  border: none;
+  margin: 1%;
+}
+
+.hr-leftLP {
+  margin-right: 1%;
+  margin-left: -1% ;
+}
+
+.hr-rightLP {
+  margin-left: 1%; }
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #255582;
+}
+
+/*create new account text*/
+.create_newLP{
+  background-color: #25558200;
+  color:#161b1f;
+  font-size: 100%;
+  margin-top: 3%;
+  margin-left: -1% ;
+  border: none;
+  padding-bottom: 6%;
+}
+
+.create_newLP:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,42 @@
+.container1 {
+    height: 76vh; 
+    background-image: linear-gradient(rgb(179, 243, 245) 10% , rgba(0, 0, 0, 0) ), url("../images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .t1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:45px;
+    width:50%;
+    margin-left: 265px;
+  }
+  
+  .B1 {
+  font-size: 18px;
+  border-radius: 4px;
+  border-color: #1e73be;
+  box-shadow:6px 6px 6px rgb(12, 12, 23);
+  background-color: #1e73be;
+  color: white;
+  padding: 4px 10px;
+  cursor: pointer;
+  width: 240px;
+  margin-left: 12px;
+  }
+  .B1:hover{
+  background-color: #a4d8ef;
+  border: 2px solid #101096;
+  font-size:x-large;
+  color:rgb(21, 24, 180);
+  }
+  
+  
+  div{
+    margin: 0;
+    padding: 0;
+    /* height: 100%;
+    width: 100vw; */
+  }
+  

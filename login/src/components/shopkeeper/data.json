@@ -1,0 +1,38 @@
+[
+    {
+        "id":1, 
+        "pid":"p01" ,
+        "pname": "pen",
+        "price": 10,
+        "qty":10
+    },
+    {
+        "id":2,  
+        "pid":"p02",
+        "pname": "pencil",
+        "price": 6,
+        "qty":20
+    },
+    {
+        "id":3,  
+        "pid":"p03",
+        "pname": "blackpen",
+        "price": 3,
+        "qty":12
+    },
+    {
+        "id":4,  
+        "pid":"p04",
+        "pname": "Eraser",
+        "price": 5,
+        "qty":24
+    },
+    {
+        "id":5,  
+        "pid":"p05",
+        "pname": "Scale",
+        "price": 10,
+        "qty":18
+    }
+
+]

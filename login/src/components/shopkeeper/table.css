@@ -1,0 +1,66 @@
+.tableWrap {
+    height:100vh;
+    background-image: linear-gradient(rgb(179, 243, 245) 10% , rgba(0, 0, 0, 0) ), url("../images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.td1{
+    border: 1px solid  black;
+    text-align: center;
+    font-size: larger;
+    color:rgb(61, 7, 109);
+    margin-top: 30px;
+   
+}
+table th {
+    color:black;
+}
+table {
+    border-collapse: collapse;
+}
+.tinput{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 2px;
+    font-size: 150%;
+}
+.addForm button{
+    width:100px;
+    padding:5px;
+    color:white;
+    background-color:orange;
+    margin-left:25px;
+}
+.addForm button:hover {
+    cursor: pointer;
+    background-color:rgb(255, 55, 0);
+}
+ .edit {
+    color:white;
+    margin-right:5px;
+    background-color:rgb(52, 119, 4);
+
+ }
+ .edit, .delete{
+    border:none;
+    padding:7px;
+    border-radius:5px;
+    cursor:pointer;
+    padding: 6px 12px;
+    margin: 12px;
+ }
+ .edit:hover {
+    background-color:red;
+ }
+ .delete {
+    color:white;
+    background-color:rgb(86, 6, 6);
+ }
+ .delete:hover {
+    background-color:red;
+ }
+ button.list-group-item:focus{
+    outline: 0;
+}

@@ -1,0 +1,99 @@
+/*FOR MARGIN 0*/
+div{
+    margin: 0;
+    padding: 0;
+    /* height: 100%;
+    width: 100vw; */
+  }
+  
+  /* Style for header */
+  .header {
+      background-color: #b9f4f4;
+      color: #fff;
+      padding: 1%;
+      height: 30%;
+      width: 100%;
+      position: relative;
+      /* flex-direction: row; */
+      display: flex;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+    
+  /* CLASS FOR <DIV> GO EASY LOGO */
+  .logo{
+    height: 20%;
+    width: 20%;
+    display: flex;
+    position: relative; 
+    margin-top: 2%;
+    /* border: solid; */
+  }
+  /* GOEASY LOGO */
+    .logo img {
+      height: 100%;
+      width: 100%;
+      /* border: solid; */
+      float: left;
+      margin-right: 70%;
+    }
+    
+  .logo:hover{
+    cursor: pointer;
+  }
+  
+  .logo:hover::before{
+    content: "GoEazy";
+    position: absolute;
+    top: 110%;
+    left: 100%;
+    transform: translateX(-50%);
+    padding: 0.5%;
+    font-size: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(202, 208, 206);
+    border: black solid;
+    border-width: 1px;
+    color: black;
+    border-radius: 7%;
+    white-space: nowrap;
+  
+  }
+  
+    /* CLASS FOR <DIV> GO BV LOGO */
+    .bv_logo{
+      width: 8%; 
+      height: 2%;
+      margin-top: 0.5%;
+      position: relative;
+      display: flex;
+      float: right;
+      margin-left: 70%;
+      /* border: solid; */
+    }
+  
+    /* BV LOGO */
+    .bv_logo img{
+      width: 100%;
+      /* border: solid black; */
+      display: flex;
+  
+      
+    }
+  
+    .bv_logo:hover::before{
+        content: "Banasthali Vidyapith";
+        position: absolute;
+        top: 110%;
+        left: 100%;
+        transform: translateX(-50%);
+        padding: 0.5%;
+        font-size: 60%;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(202, 208, 206);
+        border: black solid;
+        border-width: 1px;
+        color: black;
+        border-radius: 7%;
+        white-space: nowrap;
+    }

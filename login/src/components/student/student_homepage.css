@@ -1,0 +1,76 @@
+ /* CONTAINER FRO THE REST  */
+ .container-chp{
+    /* background-image: linear-gradient( rgba(144, 176, 207, 0) ,#0003033b) ,url('bgimage_home.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: auto; */
+    background-image: linear-gradient(rgba(179, 243, 245, 0.279) 10% , rgba(0, 0, 0, 0) ), url("../images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70%;
+  }
+
+  /* DIV FOR THE GIFS */
+  .sections-chp {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /* border: solid;   */
+    justify-content: center;
+  }
+
+  .section-gif-chp{
+    /* background-color: #0512127a; */
+    background-color: #01040c00;
+    /* border-bottom: solid red ; */
+    /* border-radius: 100%; */
+    border: none;
+    justify-self: center;
+    display: flex;
+    width: 20%;
+    height: 50%;
+    margin-left: 1%;
+    margin-top: 1%;
+  }
+
+  /* for nav of profile and orders */
+  .navbar-chp {
+    display: flex;
+    background-color: #255582;
+    width: 100%;
+  }
+
+.navbar-chp button{
+  background-color: #255582;
+  border: none;
+  color: #b9f4f4;
+  padding: 1%;
+  font-size: 106%;
+}
+
+.navbar-chp .logout-chp{
+  float: right;
+  display: flex;
+  left: 82%;
+  position: relative;
+}
+
+  .navbar-chp button:hover {
+    background: #b9f4f4;
+    color: #255582;
+    text-decoration:none;
+  }
+
+  /* TIMING WALA DIV */
+  .timings-chp {
+    background-color: #0c202000;
+    color: #04213b;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 2%;
+    padding: 20px;
+    position: relative;
+    width: 30%;
+    left: 35%;
+  }
