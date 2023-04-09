@@ -4,11 +4,13 @@ import '../../headerForAll.css';
 import logo2 from '../images/logo2.png';
 import bv_logo from '../images/bv_logo.jpg';
 import "./shopkeeperHomePage.css";
+import axios from "axios";
 
 function Shopkeeper_homepage() {
 const navigate = useNavigate();
 
 const handleClick = () => navigate("/Table");
+const handleClick1 = () => navigate("/Shop_order");
 return (
 <>
 
@@ -29,7 +31,7 @@ return (
 <button class="B1" onClick={handleClick}>Update </button>
 </td>
 <td>
-<button class="B1">Search </button>
+<button class="B1" onClick={handleClick1}>View Orders </button>
 </td>
 </tr>
 </table>

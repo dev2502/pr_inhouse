@@ -11,6 +11,8 @@ import Login from "./components/login/Login"
  import Shopkeeper_homepage from './components/shopkeeper/Shopkeeper_homepage';
  import Shopkeeper_login from './components/shopkeeper/Shopkeeper_login';
  import Table from './components/shopkeeper/Table';
+ import View_order from './components/shopkeeper/VIew_order';
+ import Shop_order from './components/shopkeeper/Shop_order';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -31,6 +33,8 @@ root.render(
       <Route path='/Shopkeeper_homepage' element={<Shopkeeper_homepage/>}/>
       <Route path='/Shopkeeper_login' element={<Shopkeeper_login/>}/>
       <Route path='/Table' element={<Table/>}/>
+      <Route path='/View_order' element={<View_order/>}/>
+      <Route path='/Shop_order' element={<Shop_order/>}/>
     </Routes>
   </BrowserRouter>
 );

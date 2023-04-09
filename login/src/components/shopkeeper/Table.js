@@ -4,6 +4,7 @@ import '../../headerForAll.css';
 import logo2 from '../images/logo2.png';
 import bv_logo from '../images/bv_logo.jpg';
 import './table.css';
+import axios from 'axios';
 
 function Table() {
     const [datas, setData] = useState(Data)
@@ -138,30 +139,90 @@ function AddItem({setData}){
     qtyRef.current.value =""
 
 }
-    return(
-        <>
-        {/* HEADER */}
-        {/* <div className="header">
-          <div className="logo">
-            <img src={logo2} alt="Logo"/>
-          </div>
-          <div className="bv_logo">
-            <img src={bv_logo} alt="Logo"/>
-          </div>
-       </div> */}
+const [product, setProduct] = useState({
+  id: '',
+  name: '',
+  quantity: '',
+  price: '',
+});
 
-        <div className="container">
+const handleChange = (e) => {
+  setProduct({ ...product, [e.target.name]: e.target.value });
+};
+
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+  
+//   axios.post('http://localhost:9002/api/products', product)
+//     .then((res) => {
+//       console.log(res.data);
+//       setProduct({
+//         id: '',
+//         name: '',
+//         quantity: '',
+//         price: '',
+//       });
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// }
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const { productId, productName, price, quantity } = product
+  axios.post('http://localhost:9002/api/products', product)
+    .then((res) => {
+      console.log(res.data);
+      setProduct({
+        id: '',
+        name: '',
+        quantity: '',
+        price: '',
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// const register = () => {
+//   const { name, SmartId, password, reEnterPassword } = user
+//   if( name && SmartId && password && password === reEnterPassword){
+//        axios.post("http://localhost:9002/register", user)
+//        .then( res => console.log(res))
+//        navigate("/login")
+//   }else{
+//       alert("invalid!");
+//       return false;
+//   }
+// }
+
+
+    return(
+        <>     
       
+        <form onSubmit={handleSubmit}>
+      <label>
+        ID:
+        <input type="text" name="id" value={product.id} onChange={handleChange} />
+      </label>
+      <label>
+        Name:
+        <input type="text" name="name" value={product.name} onChange={handleChange} />
+      </label>
+      <label>
+        Quantity:
+        <input type="text" name="quantity" value={product.quantity} onChange={handleChange} />
+      </label>
+      <label>
+      Price:
+        <input type="text" name="price" value={product.price} onChange={handleChange} />
+      </label>
+      <button type="submit">Add Product</button>
+    </form>
+    </>
     
-        <form className="addForm" onSubmit={handleValues}>
-            <input className="tinput"   type="text" name="pid" placeholder="Enter id" ref={pidRef} />
-            <input className="tinput" type="text"   name="pname" placeholder="Enter name" ref={pnameRef}/>
-            <input className="tinput" type="number"  name="price"placeholder="Enter price" ref={priceRef} />
-            <input  className="tinput" type="number"  name="qty" placeholder="Enter qty" ref={qtyRef}/>
-            <button >Add</button>
-        </form>
-        </div>
-        </>
     )
     }
 

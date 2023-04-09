@@ -10,14 +10,30 @@ async function main() {
     console.log('db connected')
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
   }
+  const ShopkeeperSchema = new mongoose.Schema({
+    shop_name: String,
+    ShopId: String,
+    Spassword: String
+  });
+
+  const Shopkeeper = mongoose.model('Shopkeeper', ShopkeeperSchema);
   
   const StudentSchema = new mongoose.Schema({
-    name: String,
-    SmartId: String,
-    password: String
+    Shopname: String,
+    ShopId: String,
+    Spassword: String
   });
 
   const Students = mongoose.model('Students', StudentSchema);
+
+  const productSchema = new mongoose.Schema({
+    productId: { type: String, required: true },
+    productName: { type: String, required: true },
+    productQuantity: { type: Number, required: true },
+    productPrice: { type: Number, required: true },
+  });
+
+  const Product = mongoose.model("Product", productSchema);
 
   const server = express();
 
@@ -25,7 +41,7 @@ async function main() {
   server.use(bodyParser.json()); 
 
 
-//Routes
+//student login
 server.post('/login', (req,res)=> {
     const { SmartId, password } = req.body
     Students.findOne({ SmartId: SmartId}, (err, user) => {
@@ -37,9 +53,28 @@ server.post('/login', (req,res)=> {
             }
         }else{
             res.send({message: "user not registered"})
+            
         }
     })
 })
+
+//shopkeeper login
+server.post('/Shopkeeper_login', (req,res)=> {
+  const { ShopId, Spassword } = req.body
+  Students.findOne({ ShopId: ShopId}, (err, shop) => {
+      if(shop){
+          if(Spassword === shop.Spassword){
+              res.send({message: "login successfull", shop: shop})
+          }else{
+              res.send({message: "password do not match"})
+          }
+      }else{
+          res.send({message: "user not registered"})
+          
+      }
+  })
+})
+//register
 server.post('/register', (req,res)=> {
     const {name, SmartId, password}= req.body
     Students.findOne({SmartId: SmartId}, (err, user) => {
@@ -64,6 +99,74 @@ server.post('/register', (req,res)=> {
     
 })
 
+
+// Create a products
+server.post("/api/products", (req, res) => {
+  const product = new Product({
+    id: req.body.id,
+    name: req.body.name,
+    quantity: req.body.quantity,
+    price: req.body.price,
+  });
+
+  product.save((err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Error adding product!");
+    } else {
+      res.send("Product added successfully!");
+    }
+  });
+});
+
+// Update a product
+server.put("/api/products/:id", (req, res) => {
+    const id = req.params.id;
+  
+    Product.findOneAndUpdate(
+      { id },
+      {
+        name: req.body.name,
+        quantity: req.body.quantity,
+        price: req.body.price,
+      },
+      (err) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error updating product!");
+        } else {
+          res.send("Product updated successfully!");
+        }
+      }
+    );
+  });
+
+  // Delete a products
+server.delete("/api/products/:id", (req, res) => {
+    const id = req.params.id;
+  
+    Product.deleteOne({ id }, (err) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error deleting product!");
+      } else {
+        res.send("Product deleted successfully!");
+      }
+    });
+  });
+
+  // Get all products
+server.get("/api/all-products", (req, res) => {
+    Product.find({}, (err, products) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(products);
+      }
+    });
+  });
+
 server.listen(9002,()=> {
     console.log("started at port 9002")
 })
+
