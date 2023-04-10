@@ -100,10 +100,9 @@ const Login = () => {
         .post("http://localhost:9002/login", user)
         .then((res) => {
           alert(res.data.message);
-          navigate("/Student_homepage");
-
         })
         .catch((error) => console.log(error));
+        navigate("/Student_homepage");
     };
 
 

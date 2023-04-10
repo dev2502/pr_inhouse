@@ -170,8 +170,8 @@ const handleChange = (e) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  const { productId, productName, price, quantity } = product
-  axios.post('http://localhost:9002/api/products', product)
+  axios
+    .post('http://localhost:9002/Table', product)
     .then((res) => {
       console.log(res.data);
       setProduct({
@@ -185,6 +185,16 @@ const handleSubmit = (e) => {
       console.error(err);
     });
 }
+
+const login = () => {
+  axios
+    .post("http://localhost:9002/login", user)
+    .then((res) => {
+      alert(res.data.message);
+    })
+    .catch((error) => console.log(error));
+    navigate("/Student_homepage");
+};
 
 // const register = () => {
 //   const { name, SmartId, password, reEnterPassword } = user
@@ -201,8 +211,7 @@ const handleSubmit = (e) => {
 
     return(
         <>     
-      
-        <form onSubmit={handleSubmit}>
+        <form>
       <label>
         ID:
         <input type="text" name="id" value={product.id} onChange={handleChange} />
@@ -219,7 +228,7 @@ const handleSubmit = (e) => {
       Price:
         <input type="text" name="price" value={product.price} onChange={handleChange} />
       </label>
-      <button type="submit">Add Product</button>
+      <button type="submit" onClick={handleSubmit}>Add Product</button>
     </form>
     </>
     

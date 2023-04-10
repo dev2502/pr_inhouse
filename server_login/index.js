@@ -11,17 +11,17 @@ async function main() {
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
   }
   const ShopkeeperSchema = new mongoose.Schema({
-    shop_name: String,
+    Shopname: String,
     ShopId: String,
     Spassword: String
   });
 
-  const Shopkeeper = mongoose.model('Shopkeeper', ShopkeeperSchema);
+  const Shopkeepers = mongoose.model('Shopkeepers', ShopkeeperSchema);
   
   const StudentSchema = new mongoose.Schema({
-    Shopname: String,
-    ShopId: String,
-    Spassword: String
+   name: String,
+    SmartId: String,
+    password: String
   });
 
   const Students = mongoose.model('Students', StudentSchema);
@@ -61,7 +61,7 @@ server.post('/login', (req,res)=> {
 //shopkeeper login
 server.post('/Shopkeeper_login', (req,res)=> {
   const { ShopId, Spassword } = req.body
-  Students.findOne({ ShopId: ShopId}, (err, shop) => {
+  Shopkeepers.findOne({ ShopId: ShopId}, (err, shop) => {
       if(shop){
           if(Spassword === shop.Spassword){
               res.send({message: "login successfull", shop: shop})
@@ -69,7 +69,7 @@ server.post('/Shopkeeper_login', (req,res)=> {
               res.send({message: "password do not match"})
           }
       }else{
-          res.send({message: "user not registered"})
+          res.send({message: "shop not registered"})
           
       }
   })
@@ -101,7 +101,7 @@ server.post('/register', (req,res)=> {
 
 
 // Create a products
-server.post("/api/products", (req, res) => {
+server.post("/Table", (req, res) => {
   const product = new Product({
     id: req.body.id,
     name: req.body.name,

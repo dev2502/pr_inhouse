@@ -28,10 +28,10 @@ return (
 <table className="t1">
 <tr>
 <td>
-<button class="B1" onClick={handleClick}>Update </button>
+<button className="B1" onClick={handleClick}>Update </button>
 </td>
 <td>
-<button class="B1" onClick={handleClick1}>View Orders </button>
+<button className="B1" onClick={handleClick1}>View Orders </button>
 </td>
 </tr>
 </table>

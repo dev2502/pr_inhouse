@@ -1,13 +1,12 @@
-import logo2 from "./logo2.png";
-import bv_logo from "./bv_logo.jpg";
-import './headerForAll.css';
+import '../../headerForAll.css';
+import logo2 from '../images/logo2.png';
+import bv_logo from '../images/bv_logo.jpg';
 import './table.css';
 
 function View_order() {
 
     return ( 
         <>
-        {/* HEADER */}
        <div className="header">
           <div className="logo">
             <img src={logo2} alt="Logo"/>
@@ -46,9 +45,6 @@ function View_order() {
                         <th  colspan="4"> TOTAL</th>
                         <td> 130</td>
                     </tr>
-                       
-{/*                     
-                ))} */}
                     </table>
             
             </div>

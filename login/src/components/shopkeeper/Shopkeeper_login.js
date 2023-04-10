@@ -20,19 +20,9 @@ const Shopkeeper_Login = () => {
     });
   };
 
-  // const login = () => {
-  //   axios
-  //     .post("http://localhost:9002/login", user)
-  //     .then((res) => {
-  //       alert(res.data.message);
-  //       // navigate to home page
-  //     })
-  //     navigate("/Shopkeeper_homepage")
-  //     .catch((error) => console.log(error));
-  // };
   const Shop_login = () => {
     axios
-      .post("http://localhost:9002/login", shop)
+      .post("http://localhost:9002/Shopkeeper_login",shop)
       .then((res) => {
         alert(res.data.message);
         // navigate to home page
@@ -51,17 +41,15 @@ const Shopkeeper_Login = () => {
         name="ShopId"
         value={shop.ShopId}
         onChange={handleChange}
-        placeholder="Enter Shop Id"
+        placeholder="Enter Shop Id" required
       />
       <input
         type="password"
         name="Spassword"
         value={shop.Spassword}
         onChange={handleChange}
-        placeholder="Enter your Password"
+        placeholder="Enter your Password" required
       />
-       {/* <input type="text" name="ShopId" value={shop.ShopId} onChange={handleChange} placeholder="Enter your Shop Id" required />
-      <input type="password" name="password" value={shop.Spassword} onChange={handleChange}  placeholder="Enter your Password" required /> */}
       <div className="button" onClick={Shop_login}>
         Login
       </div>
