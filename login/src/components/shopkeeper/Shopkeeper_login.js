@@ -53,6 +53,7 @@ const Shopkeeper_Login = () => {
     <div className="login">
       {console.log(shop)}
       <h1>Login</h1>
+      <form className="formLogin" onSubmit={Shop_login}>
       <input
         type="text"
         name="ShopId"
@@ -67,9 +68,8 @@ const Shopkeeper_Login = () => {
         onChange={handleChange}
         placeholder="Enter your Password" required
       />
-      <div className="button" onClick={Shop_login}>
-        Login
-      </div>
+      <input type="submit" className="button" value="Login" />
+      </form>
     </div>
     </div>
     </div>
