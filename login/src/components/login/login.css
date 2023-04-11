@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%);
 }
 
-.login > input {
+.formLogin > input {
   border-radius: 8px;
   border: 2px solid #dddfe2;
   outline: none;
@@ -34,7 +34,7 @@
   font-size: 1rem;
 }
 
-.login > .button {
+.formLogin > .button {
   background: #1877f2;
   border: 1px solid #1877f2;
   color: #fff;
