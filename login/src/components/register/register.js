@@ -48,6 +48,7 @@ const Register = () => {
         </div>
       </div>
       <div className="containerLP">
+      <div className="containerlogin">
         <div className="register"> 
         {console.log("user",user)}
         <h1>Register</h1>
@@ -56,6 +57,7 @@ const Register = () => {
         <input type="password" name="password" value={user.password}  placeholder="enter your password" onChange={ handleChange } required></input>
         <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="re-enter your password" onChange={ handleChange } required></input>
         <div className="button" onClick={register}>Register</div>
+       </div>
        </div>
        </div>
        </>

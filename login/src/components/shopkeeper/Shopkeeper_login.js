@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "../login/login.css";
 import axios from "axios";
+import '../main/main_login.css';
+import '../../headerForAll.css';
+import logo2 from '../images/logo2.png';
+import bv_logo from '../images/bv_logo.jpg';
 import { useNavigate } from "react-router-dom";
 
 
@@ -33,6 +37,19 @@ const Shopkeeper_Login = () => {
   };
 
   return (
+    
+     <>
+      <div>
+         <div className="header">
+            <div className="logo">
+              <img src={logo2} alt="Logo" />
+            </div>
+            <div className="bv_logo">
+              <img src={bv_logo} alt="Logo"/>
+            </div>
+          </div>
+          <div className="containerLP">
+          <div className="containerlogin">
     <div className="login">
       {console.log(shop)}
       <h1>Login</h1>
@@ -54,9 +71,12 @@ const Shopkeeper_Login = () => {
         Login
       </div>
     </div>
-  );
-};
-
+    </div>
+    </div>
+    </div>
+    </>
+  )
+}
 export default Shopkeeper_Login;
 
 

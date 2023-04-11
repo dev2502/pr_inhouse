@@ -43,6 +43,7 @@ const Login = () => {
                 </div>
             </div>
             <div className="containerLP">
+            <div className="containerlogin">
                 <div className="login"> 
                     {console.log(user)}
                     <h1>Login</h1>
@@ -50,6 +51,7 @@ const Login = () => {
                     <input type="password" name="password" value={user.password} onChange={handleChange}  placeholder="Enter your Password" required />
                     <div className="button" onClick={ login }>Login</div>
                 </div>
+            </div>
             </div>
         </>
     )
