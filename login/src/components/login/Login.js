@@ -47,9 +47,23 @@ const Login = () => {
                 <div className="login"> 
                     {console.log(user)}
                     <h1>Login</h1>
-                    <input type="text" name="SmartId" value={user.SmartId} onChange={handleChange} placeholder="Enter your Smart Id" required />
-                    <input type="password" name="password" value={user.password} onChange={handleChange}  placeholder="Enter your Password" required />
-                    <div className="button" onClick={ login }>Login</div>
+                    <form className="formLogin" onSubmit={ login }>
+                    <input 
+                    type="text" 
+                    name="SmartId" 
+                    value={user.SmartId} 
+                    onChange={handleChange} 
+                    placeholder="Enter your Smart Id" 
+                    required />
+                    <input 
+                    type="password" 
+                    name="password" 
+                    value={user.password} 
+                    onChange={handleChange}  
+                    placeholder="Enter your Password" 
+                    required />
+                    <input type="submit" className="button" value="Login" />
+                    </form>
                 </div>
             </div>
             </div>
